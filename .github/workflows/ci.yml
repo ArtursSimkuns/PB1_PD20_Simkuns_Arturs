@@ -6,7 +6,7 @@ on:
 
 env:
   IMAGE_NAME: pb1-pd20-app
-  IMAGE_VERSION: v1.0.0
+  IMAGE_VERSION: v1.1.0
 
 jobs:
   test:

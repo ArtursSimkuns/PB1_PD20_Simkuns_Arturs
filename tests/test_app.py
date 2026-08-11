@@ -2,7 +2,7 @@
 
 import pytest
 
-from app import calculate_vat
+from app import calculate_price_with_vat, calculate_vat
 
 
 def test_calculate_vat_for_positive_price():
@@ -25,3 +25,8 @@ def test_calculate_vat_for_invalid_type():
     """Pārbauda, ka teksts cenas vietā nav atļauts."""
     with pytest.raises(TypeError):
         calculate_vat("100")
+
+
+def test_calculate_price_with_vat():
+    """Pārbauda kopējās cenas aprēķinu ar PVN."""
+    assert calculate_price_with_vat(100) == 121.0

@@ -23,7 +23,23 @@ def calculate_vat(price: float) -> float:
     return round(price * 0.21, 2)
 
 
+def calculate_price_with_vat(price: float) -> float:
+    """Aprēķina kopējo cenu ar 21% PVN.
+
+    Args:
+        price: Cena EUR bez PVN.
+
+    Returns:
+        Cena EUR kopā ar PVN.
+    """
+    vat = calculate_vat(price)
+    return round(price + vat, 2)
+
+
 if __name__ == "__main__":
     price = 100
     vat = calculate_vat(price)
+    total = calculate_price_with_vat(price)
+
     print(f"PVN no {price} EUR ir {vat} EUR")
+    print(f"Cena ar PVN ir {total} EUR")
