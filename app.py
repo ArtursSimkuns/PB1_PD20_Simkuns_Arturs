@@ -20,7 +20,7 @@ def calculate_vat(price: float) -> float:
     if price < 0:
         raise ValueError("Cena nevar būt negatīva.")
 
-    return round(price * 0.25, 2)
+    return round(price * 0.21, 2)
 
 
 if __name__ == "__main__":
